@@ -157,4 +157,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDestroy: 5
-  shootForce: {x: 0, y: 4, z: 4}
+  shootStrenght: 5
+  shootForce: {x: 0, y: 5, z: 0}

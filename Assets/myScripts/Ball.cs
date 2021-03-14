@@ -9,7 +9,8 @@ public class Ball : MonoBehaviour
 
     private Rigidbody myRb;
 
-    private Vector3 shootForce;
+    public float shootStrenght;
+    public Vector3 shootForce;
 
 
     private void Start()
@@ -34,7 +35,7 @@ public class Ball : MonoBehaviour
 
     public void ShootBall()
     {
-        myRb.AddForce(shootForce, ForceMode.Impulse);
+        myRb.AddRelativeForce(Vector3.forward * shootStrenght + shootForce, ForceMode.Impulse);
     }
 
 }
