@@ -5,20 +5,18 @@ using UnityEngine;
 public class SpawnBall : MonoBehaviour
 {
     public GameObject Ball;
-    public GameObject AROrigin;
+    public GameObject CameraChild;
 
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount > 0)
         {
-            Instantiate(Ball, AROrigin.transform.position, Quaternion.identity);
-
-            //spawna pallina a tot distanza dalla camera con rotazione forward;
+            Touch touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Began)
+            {
+                Instantiate(Ball, CameraChild.transform.position, CameraChild.transform.rotation);
+            }
         }
     }
 }
